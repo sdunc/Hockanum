@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="400">
     <StackPanel>
+        <TextBlock Text="{Binding RefreshPeriod}"/>
         <TextBlock Text="{Binding EqualizationTank.TotalVolume}"/>
         <TextBlock Text="{Binding EqualizationTank.FilledVolume}"/>
         <Button Command="{Binding AddCubicMeterCommand}" Content="Add 1 cubic meter of Water!"/>

@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Hockanum.Models;
+using Hockanum.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,11 @@ namespace Hockanum.ViewModels
 {
     public partial class MainViewModel : ObservableObject
     {
+        private readonly DataService dataservice;
+
+        [ObservableProperty]
+        private TimeSpan refreshPeriod;
+
         [ObservableProperty]
         private CylindricalTank equalizationTank = new CylindricalTank(1, 3);
 
@@ -20,5 +26,15 @@ namespace Hockanum.ViewModels
         [RelayCommand]
         private void RemoveCubicMeter() { equalizationTank.FilledVolume -= 1; }
 
+        public MainViewModel(DataService dataService)
+        {
+            dataservice = dataService;
+            dataservice.NewData += Dataservice_NewData;
+        }
+
+        private void Dataservice_NewData(object? sender, EventArgs e)
+        {
+            RefreshPeriod = dataservice.RefreshPeriod;
+        }
     }
 }

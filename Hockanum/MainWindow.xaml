@@ -1,0 +1,15 @@
+﻿<Window x:Class="Hockanum.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hockanum"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="400">
+    <StackPanel>
+        <TextBlock Text="{Binding EqualizationTank.TotalVolume}"/>
+        <TextBlock Text="{Binding EqualizationTank.FilledVolume}"/>
+        <Button Command="{Binding AddCubicMeterCommand}" Content="Add 1 cubic meter of Water!"/>
+        <Button Command="{Binding RemoveCubicMeterCommand}" Content="Remove 1 cubic meter of Water!"/>
+    </StackPanel>
+</Window>

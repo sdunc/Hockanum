@@ -16,6 +16,10 @@ namespace Hockanum.Services
 
         private volatile object locker = new(); // even DateTime access is not atomic
 
+        public double InflowValvePosition { get; private set; } = 0;
+        public double OutflowValvePosition { get; private set; } = 1;
+
+
         public DataService()
         {
             timer = new System.Timers.Timer

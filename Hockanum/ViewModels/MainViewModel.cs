@@ -18,13 +18,19 @@ namespace Hockanum.ViewModels
         private TimeSpan refreshPeriod;
 
         [ObservableProperty]
-        private CylindricalTank equalizationTank = new CylindricalTank(1, 3);
+        private CylindricalTank tank = new CylindricalTank(1, 3);
+
+        [ObservableProperty]
+        private Valve inflowValve = new();
+
+        [ObservableProperty]
+        private Valve outflowValve = new();
 
         [RelayCommand]
-        private void AddCubicMeter() { equalizationTank.FilledVolume += 1; }
+        private void AddCubicMeter() { Tank.FilledVolume += 1; }
 
         [RelayCommand]
-        private void RemoveCubicMeter() { equalizationTank.FilledVolume -= 1; }
+        private void RemoveCubicMeter() { Tank.FilledVolume -= 1; }
 
         public MainViewModel(DataService dataService)
         {

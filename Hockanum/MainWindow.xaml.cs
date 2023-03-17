@@ -26,5 +26,10 @@ namespace Hockanum
             InitializeComponent();
             this.DataContext = new MainViewModel(new Services.DataService());
         }
+
+        private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
     }
 }

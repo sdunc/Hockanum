@@ -20,12 +20,16 @@ namespace Hockanum.Models
         public double TotalVolume { get; }
 
         [ObservableProperty]
+        private double filledHeight;
+
+        [ObservableProperty]
         private double filledVolume;
 
         partial void OnFilledVolumeChanged(double value)
         {
             if (FilledVolume > TotalVolume) FilledVolume = TotalVolume;
             else if (FilledVolume < 0) FilledVolume = 0;
+            FilledHeight = FilledVolume / (Math.PI * Radius * Radius);
         }
 
         public CylindricalTank(double radius, double height)

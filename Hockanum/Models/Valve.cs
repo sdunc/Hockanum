@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hockanum.Services
+namespace Hockanum.Models
 {
     public class Valve
     {
@@ -12,7 +12,7 @@ namespace Hockanum.Services
         // flowThrough = min (ValvePosition * pipe_cross_section, inflow)
         // https://www.khanacademy.org/science/physics/fluids/fluid-dynamics/a/what-is-volume-flow-rate#:~:text=A%20A%20is%20the%20cross%20sectional%20area%20of,the%20area%20A%20A%20is%20easy%20to%20determine.
         private double valvePosition = 0;
-        public double ValvePosition 
+        public double ValvePosition
         {
             get => valvePosition;
             set
@@ -23,8 +23,8 @@ namespace Hockanum.Services
             }
         }
 
-        public void TurnValveLeft() { ValvePosition -= 0.1; }
-        
+        public void TurnValveLeft() { ValvePosition += 0.1; }
+
         public void TurnValveRight() { ValvePosition -= 0.1; }
 
     }

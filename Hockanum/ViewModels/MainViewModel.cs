@@ -20,11 +20,22 @@ namespace Hockanum.ViewModels
         [ObservableProperty]
         private CylindricalTank equalizationTank = new CylindricalTank(1, 3);
 
+        [ObservableProperty]
+        private Valve inflowValve = new();
+
+
         [RelayCommand]
         private void AddCubicMeter() { equalizationTank.FilledVolume += 1; }
 
         [RelayCommand]
         private void RemoveCubicMeter() { equalizationTank.FilledVolume -= 1; }
+
+        [RelayCommand]
+        private void TurnValveLeft() { InflowValve.TurnValveLeft(); }
+
+        [RelayCommand]
+        private void TurnValveRight() { InflowValve.TurnValveRight(); }
+
 
         public MainViewModel(DataService dataService)
         {

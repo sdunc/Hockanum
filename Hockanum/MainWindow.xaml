@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hockanum"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="400">
+        Title="MainWindow" Height="300" Width="400" FontSize="20" HorizontalAlignment="Center" HorizontalContentAlignment="Center">
     <StackPanel>
         <TextBlock Text="{Binding RefreshPeriod}"/>
         <TextBlock Text="{Binding EqualizationTank.TotalVolume}"/>
         <TextBlock Text="{Binding EqualizationTank.FilledVolume}"/>
         <Button Command="{Binding AddCubicMeterCommand}" Content="Add 1 cubic meter of Water!"/>
         <Button Command="{Binding RemoveCubicMeterCommand}" Content="Remove 1 cubic meter of Water!"/>
+        <Button Command="{Binding TurnValveRightCommand}" Content="Turn Inflow Valve right"/>
+        <Button Command="{Binding TurnValveLeftCommand}" Content="Turn Inflow Valve left"/>
+        <TextBlock Text="{Binding InflowValve.ValvePosition}"/>
     </StackPanel>
 </Window>

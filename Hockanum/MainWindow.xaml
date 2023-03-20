@@ -8,14 +8,14 @@
         Title="Hockanum" Height="300" Width="400">
     <Canvas>
         <TextBlock Text="{Binding RefreshPeriod}" Canvas.Left="374" Canvas.Top="252"/>
-        <TextBlock Text="{Binding Tank.TotalVolume}" Canvas.Left="167" Canvas.Top="232"/>
-        <TextBlock Text="{Binding Tank.FilledVolume}" Canvas.Left="252" Canvas.Top="142"/>
+        <TextBlock Text="{Binding Tank.TotalVolume}" Canvas.Left="60" Canvas.Top="36"/>
+        <TextBlock Text="{Binding Tank.FilledVolume}" Canvas.Left="252" Canvas.Top="134" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <Button Command="{Binding AddCubicMeterCommand}" Content="Add 1 cubic meter of Water!" Canvas.Left="221" Canvas.Top="49"/>
         <Button Command="{Binding RemoveCubicMeterCommand}" Content="Remove 1 cubic meter of Water!" Canvas.Left="200" Canvas.Top="17"/>
-        <Slider x:Name="InflowValve" Value="{Binding InflowValve.ValvePosition}" Canvas.Left="91" Canvas.Top="104" Orientation="Vertical" Maximum="1" LargeChange="0.1" SmallChange="0.01" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" AutomationProperties.Name=""/>
-        <ProgressBar Maximum="{Binding Tank.Height}" Value="{Binding Tank.FilledHeight}" Height="113" Canvas.Left="160" Canvas.Top="95" Width="80" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" ValueChanged="ProgressBar_ValueChanged" Foreground="#FF0637B0"/>
-        <Label Content="Inflow Valve" Canvas.Left="27" Canvas.Top="129"/>
-        <Label Content="m^3 total" Canvas.Left="200" Canvas.Top="214" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Label Content="m^3 filled" Canvas.Left="257" Canvas.Top="152" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Slider x:Name="InflowValve" Value="{Binding OutflowValve.ValvePosition}" Canvas.Left="332" Canvas.Top="183" Orientation="Vertical" Maximum="1" LargeChange="0.1" SmallChange="0.01" HorizontalAlignment="Left" Height="77" VerticalAlignment="Top" AutomationProperties.Name=""/>
+        <ProgressBar Maximum="{Binding Tank.Height}" Value="{Binding Tank.FilledHeight}" Height="113" Canvas.Left="151" Canvas.Top="85" Width="80" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" ValueChanged="ProgressBar_ValueChanged" Foreground="#FF0637B0"/>
+        <Label Content="Outflow Valve" Canvas.Left="252" Canvas.Top="201"/>
+        <Label Content="m^3 total" Canvas.Left="29" Canvas.Top="46" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="m^3 filled" Canvas.Left="255" Canvas.Top="153" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Canvas>
 </Window>

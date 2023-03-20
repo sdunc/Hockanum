@@ -21,14 +21,7 @@ namespace Hockanum.ViewModels
         private CylindricalTank tank = new CylindricalTank(1, 3);
 
         [ObservableProperty]
-        private Valve inflowValve = new();
-
-        [ObservableProperty]
         private Valve outflowValve = new();
-
-        [ObservableProperty]
-        private Valve inflowValve = new();
-
 
         [RelayCommand]
         private void AddCubicMeter() { Tank.FilledVolume += 1; }
@@ -37,10 +30,10 @@ namespace Hockanum.ViewModels
         private void RemoveCubicMeter() { Tank.FilledVolume -= 1; }
 
         [RelayCommand]
-        private void TurnValveLeft() { InflowValve.TurnValveLeft(); }
+        private void TurnValveLeft() { outflowValve.TurnValveLeft(); }
 
         [RelayCommand]
-        private void TurnValveRight() { InflowValve.TurnValveRight(); }
+        private void TurnValveRight() { outflowValve.TurnValveRight(); }
 
 
         public MainViewModel(DataService dataService)
@@ -51,6 +44,7 @@ namespace Hockanum.ViewModels
 
         private void Dataservice_NewData(object? sender, EventArgs e)
         {
+            Tank.FilledVolume += (1 - outflowValve.ValvePosition); // 1 M^3 inflow each second
             RefreshPeriod = dataservice.RefreshPeriod;
         }
     }

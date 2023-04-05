@@ -17,5 +17,6 @@
         <Label Content="Outflow Valve" Canvas.Left="252" Canvas.Top="201"/>
         <Label Content="m^3 total" Canvas.Left="29" Canvas.Top="46" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label Content="m^3 filled" Canvas.Left="255" Canvas.Top="153" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Canvas Height="284" Width="400"/>
     </Canvas>
 </Window>

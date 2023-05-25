@@ -1,4 +1,5 @@
-﻿using Hockanum.ViewModels;
+﻿using DAQLib;
+using Hockanum.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,12 +25,7 @@ namespace Hockanum
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainViewModel(new Services.DataService());
-        }
-
-        private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-
+            this.DataContext = new MainViewModel(new DataService());
         }
     }
 }

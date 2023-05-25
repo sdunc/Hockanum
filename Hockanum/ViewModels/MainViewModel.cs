@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using DAQLib;
 using Hockanum.Models;
-using Hockanum.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +34,6 @@ namespace Hockanum.ViewModels
 
         [RelayCommand]
         private void TurnValveRight() { outflowValve.TurnValveRight(); }
-
 
         public MainViewModel(DataService dataService)
         {

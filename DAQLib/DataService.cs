@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Timers;
+using Timer = System.Timers.Timer;
 
-namespace Hockanum.Services
+namespace DAQLib
 {
     public class DataService
     {
